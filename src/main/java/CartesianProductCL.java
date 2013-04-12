@@ -27,7 +27,7 @@ public class CartesianProductCL {
 		int lenghtOfLeft=left.length();
 		System.out.println(lenghtOfLeft);
 		
-		// create buffer for left
+		// create buffer for left set
 		Pointer<Byte> leftPointer = Pointer.pointerToBytes( ByteBuffer.allocateDirect(lenghtOfLeft) ).order(byteOrder);
 		byte[] bs1=left.getBytes();
 		for (int i = 0; i < lenghtOfLeft; i++) { // set the array
@@ -35,7 +35,7 @@ public class CartesianProductCL {
 		}
 		CLBuffer<Byte> inputBuffer1 = context.createBuffer(Usage.Input, leftPointer);		
 
-		// create buffer for right
+		// create buffer for right set
 		int lengthOfEachRight=3;
 		String[] right=new String[]{"XXX","YYY","ZZZ"};
 		List<String> rightList=Arrays.asList(right);
